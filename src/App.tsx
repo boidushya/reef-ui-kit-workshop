@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Uik from "@reef-defi/ui-kit";
 import { Wrapper, HeadingContainer, ButtonContainer } from "./Components";
+import { faFaceLaughBeam } from "@fortawesome/free-solid-svg-icons";
+import CodeSection from "./CodeSection";
+
+const QRCodeSection = () => (
+  <Uik.Container>
+    <Uik.QRCode value="https://reef-ui-kit-workshop.vercel.app" />
+  </Uik.Container>
+);
 
 const ButtonsSection = () => (
   <Uik.Container>
@@ -54,6 +62,7 @@ const ButtonsSection = () => (
         })
       }
     />
+    <Uik.Button text="Neumorphic button" neomorph icon={faFaceLaughBeam} />
   </Uik.Container>
 );
 
@@ -203,6 +212,10 @@ function App() {
           <TabsSection />
           <Uik.Divider text="Prompts/Notifications" />
           <PromptsSection />
+          <Uik.Divider text="QR Code" />
+          <QRCodeSection />
+          <Uik.Divider text="Code" />
+          <CodeSection />
         </ButtonContainer>
       </Uik.Container>
     </Wrapper>
